@@ -8,12 +8,12 @@
     <string name="calculate_not_clicked">Prvo morate izracunati svoj sustav jednadzbi!</string>
     <string name="positive_numbers_graph_title">y = %.2fx + %.2f</string>
     <string name="negative_numbers_graph_title">y = %.2fx %.2f</string>
-    <string name="first_equation_x">A<sub>1</sub></string>
-    <string name="first_equation_y">B<sub>1</sub></string>
-    <string name="first_equation_z">C<sub>1</sub></string>
-    <string name="second_equation_x">A<sub>2</sub></string>
-    <string name="second_equation_y">B<sub>2</sub></string>
-    <string name="second_equation_z">C<sub>2</sub></string>
+    <string name="first_equation_x">A<sub><small>1</small></sub></string>
+    <string name="first_equation_y">B<sub><small>1</small></sub></string>
+    <string name="first_equation_z">C<sub><small>1</small></sub></string>
+    <string name="second_equation_x">A<sub><small>2</small></sub></string>
+    <string name="second_equation_y">B<sub><small>2</small></sub></string>
+    <string name="second_equation_z">C<sub><small>2</small></sub></string>
     <string name="calculate_button">Izracunaj</string>
     <string name="show_graph_button">Prikazi graf</string>
     <string name="number_x">x +</string>
@@ -21,4 +21,11 @@
     <string name="equation_zero">= 0</string>
     <string name="toolbar_title">Rjesavanje sustava jednadzbi</string>
     <string name="empty_field_error">Neispunjeno polje</string>
+    <string name="about_text">Upute korisniku:\nOva aplikacija izradena je u svrhu pomoci ucenicima
+        prilikom savladavanja gradiva "Rjesavanje sustava linearnih jednadzbi". Aplikacija funkcionira
+        tako da korisnik prvo mora unijeti znamenke uz X, Y i slobodan član (A<sub><small>1</small></sub>, B<sub><small>1</small></sub> itd)
+        , a nakon toga pritisnuti gumb "Izracunaj". Svih 6 brojeva mora biti uneseno. Nakon toga  se prikaze trazena
+        tocka. Pritisak na gumb "Prikazi graf" moguc je tek nakon sto korisnik pritisne gumb "Izracunaj".
+        Pritiskom na taj gumb mogu se vidjeti oba pravca, kao i njihova pripadajuca jednadzba pravca.
+        Takoder se moze vidjeti i tocka, ako postoji, na kojoj se sijeku oba pravca.</string>
 </resources>
