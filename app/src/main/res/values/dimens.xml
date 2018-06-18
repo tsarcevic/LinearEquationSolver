@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="padding_big">20dp</dimen>
+    <dimen name="text_normal">18sp</dimen>
+    <dimen name="height_toolbar">56dp</dimen>
+    <dimen name="margin_toolbar">52dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+</resources>

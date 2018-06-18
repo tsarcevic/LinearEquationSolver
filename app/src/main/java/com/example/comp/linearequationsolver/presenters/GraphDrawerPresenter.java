@@ -29,8 +29,18 @@ public class GraphDrawerPresenter implements GraphDrawerInterface.Presenter {
     }
 
     @Override
-    public void onExtrasReceived(double x1, double x2, double y1, double y2, double z1, double z2) {
+    public void onExtrasReceived(double x1, double x2, double y1, double y2, double z1, double z2, boolean isOnlyOnePointSelected) {
         calculateEquations(x1, x2, y1, y2, z1, z2);
+        calculatePoint(x1, x2, y1, y2, z1, z2, isOnlyOnePointSelected);
+    }
+
+    private void calculatePoint(double x1, double x2, double y1, double y2, double z1, double z2, boolean isOnlyOnePointSelected) {
+        if (isOnlyOnePointSelected) {
+            double pointX = MathUtils.calculateDeterminantX(y1, y2, z1, z2) / MathUtils.calculateDeterminant(x1, x2, y1, y2);
+            double pointY = MathUtils.calculateDeterminantY(x1, x2, z1, z2) / MathUtils.calculateDeterminant(x1, x2, y1, y2);
+
+            view.showPoint(pointX, pointY);
+        }
     }
 
     private void calculateEquations(double x1, double x2, double y1, double y2, double z1, double z2) {
@@ -40,22 +50,10 @@ public class GraphDrawerPresenter implements GraphDrawerInterface.Presenter {
         secondEquationParameterX = -(x2 / y2);
         secondEquationParameterZ = -(z2 / y2);
 
-        /*if (firstEquationParameterZ < 0) {
-            view.setFirstNegativeEquationTitle(firstEquationParameterX, firstEquationParameterZ);
-        } else {
-            view.setFirstPositiveEquationTitle(firstEquationParameterX, firstEquationParameterZ);
-        }
-
-        if (secondEquationParameterZ < 0) {
-            view.setSecondNegativeEquationTitle(secondEquationParameterX, secondEquationParameterZ);
-        } else {
-            view.setSecondPositiveEquationTitle(secondEquationParameterX, secondEquationParameterZ);
-        }*/
-
         view.setFirstEquationTitle(MathUtils.calculateEquationWithY(x1, y1, z1));
         view.setSecondEquationTitle(MathUtils.calculateEquationWithY(x1, y2, z2));
 
-        calculateGraphPoints(-(x1/y1), -(x2/y2), -(z1/y1), -(z2/y2));//firstEquationParameterX, secondEquationParameterX, firstEquationParameterZ, secondEquationParameterZ);
+        calculateGraphPoints(-(x1 / y1), -(x2 / y2), -(z1 / y1), -(z2 / y2));
     }
 
     private void calculateGraphPoints(double x1, double x2, double z1, double z2) {

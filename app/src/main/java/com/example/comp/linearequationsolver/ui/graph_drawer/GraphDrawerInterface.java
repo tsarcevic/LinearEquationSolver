@@ -8,10 +8,6 @@ public interface GraphDrawerInterface {
 
     interface View {
 
-        void setFirstPositiveEquationTitle(double firstEquationX, double firstEquationZ);
-
-        void setSecondPositiveEquationTitle(double secondEquationX, double secondEquationZ);
-
         void setFirstEquationData(int i, double firstEquationY);
 
         void setSecondEquationData(int i, double secondEquationY);
@@ -30,19 +26,17 @@ public interface GraphDrawerInterface {
 
         void navigateBack();
 
-        void setFirstNegativeEquationTitle(double firstEquationParameterX, double firstEquationParameterZ);
-
-        void setSecondNegativeEquationTitle(double secondEquationParameterX, double secondEquationParameterZ);
-
         void setFirstEquationTitle(String equation);
 
         void setSecondEquationTitle(String equation);
+
+        void showPoint(double pointX, double pointY);
     }
 
     interface Presenter {
         void setView(View view);
 
-        void onExtrasReceived(double x1, double x2, double y1, double y2, double z1, double z2);
+        void onExtrasReceived(double x1, double x2, double y1, double y2, double z1, double z2, boolean isOnlyOnePointSelected);
 
         void onBackPressed();
     }

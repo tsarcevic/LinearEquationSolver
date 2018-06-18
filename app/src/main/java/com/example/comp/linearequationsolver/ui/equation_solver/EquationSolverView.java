@@ -18,6 +18,8 @@ import com.example.comp.linearequationsolver.base.BaseFragment;
 import com.example.comp.linearequationsolver.presenters.EquationSolverPresenter;
 import com.example.comp.linearequationsolver.ui.graph_drawer.GraphDrawerView;
 
+import java.util.Locale;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -51,6 +53,9 @@ public class EquationSolverView extends BaseFragment implements EquationSolverIn
 
     @BindView(R.id.btn_show_graph)
     Button showGraph;
+
+    @BindView(R.id.btn_reset)
+    Button resetNumbers;
 
     @BindView(R.id.tv_show_x_and_y)
     TextView tvShowXAndY;
@@ -140,6 +145,11 @@ public class EquationSolverView extends BaseFragment implements EquationSolverIn
         presenter.onShowGraphClicked();
     }
 
+    @OnClick(R.id.btn_reset)
+    public void resetNumbers() {
+        presenter.onResetClicked();
+    }
+
     @Override
     public void showAcceptedCalculateColor() {
         calculateNumbers.setBackground(getResources().getDrawable(R.drawable.round_button_success));
@@ -156,8 +166,8 @@ public class EquationSolverView extends BaseFragment implements EquationSolverIn
     }
 
     @Override
-    public void navigateToShowGraph(double x1, double x2, double y1, double y2, double z1, double z2) {
-        replaceFragment(R.id.fr_layout, GraphDrawerView.newInstance(x1, x2, y1, y2, z1, z2), true);
+    public void navigateToShowGraph(double x1, double x2, double y1, double y2, double z1, double z2, boolean isOnlyOnePointSelected) {
+        replaceFragment(R.id.fr_layout, GraphDrawerView.newInstance(x1, x2, y1, y2, z1, z2, isOnlyOnePointSelected), true);
     }
 
     @Override
@@ -196,8 +206,18 @@ public class EquationSolverView extends BaseFragment implements EquationSolverIn
     }
 
     @Override
+    public void showDeclinedShowGraphColor() {
+        showGraph.setBackground(getResources().getDrawable(R.drawable.round_button_error));
+    }
+
+    @Override
     public void showInfinitySolutionsToast() {
         Toast.makeText(getActivity(), R.string.infinity_solutions_toast, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showXAndYAreZerosToast() {
+        Toast.makeText(getActivity(), R.string.x_and_y_zeros_toast, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -211,8 +231,8 @@ public class EquationSolverView extends BaseFragment implements EquationSolverIn
     }
 
     @Override
-    public void showXAndY(double pointX, double pointY) {
-        tvShowXAndY.setText(String.format(getString(R.string.show_x_and_y), pointX, pointY));
+    public void showAllZerosToast() {
+        Toast.makeText(getActivity(), R.string.all_zeros_toast, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -221,12 +241,32 @@ public class EquationSolverView extends BaseFragment implements EquationSolverIn
     }
 
     @Override
+    public void showXAndY(double pointX, double pointY) {
+        tvShowXAndY.setText(String.format(Locale.US, getString(R.string.show_x_and_y), pointX, pointY));
+    }
+
+    @Override
     public void showNoSolutionText() {
         tvShowXAndY.setText(R.string.no_solutions_points);
     }
 
     @Override
-    public void showXandYTextView() {
+    public void showXAndYTextView() {
         tvShowXAndY.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showResetButton() {
+        resetNumbers.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void deleteNumbers() {
+        etFirstX.setText("");
+        etSecondX.setText("");
+        etFirstY.setText("");
+        etSecondY.setText("");
+        etFirstZ.setText("");
+        etSecondZ.setText("");
     }
 }

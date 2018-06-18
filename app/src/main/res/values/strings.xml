@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Rjesavanje sustava jednadzbi</string>
-    <string name="infinity_solutions_toast">Jednadzba ima beskonacno rjesenja</string>
-    <string name="no_solutions_toast">Jednadzba nema niti jedno rjesenje</string>
-    <string name="show_x_and_y">Rjesenje sustava je tocka (%.2f, %.2f)</string>
-    <string name="infinity_solutions_points">Rjesenje je svaka tocka (x, y) za koju je: %s</string>
-    <string name="no_solutions_points">Nema rjesenja, zadani pravci su paralelni</string>
-    <string name="calculate_not_clicked">Prvo morate izracunati svoj sustav jednadzbi!</string>
+    <string name="app_name">Rješavanje sustava jednadžbi</string>
+    <string name="infinity_solutions_toast">Jednadžba ima beskonačno rješenja</string>
+    <string name="no_solutions_toast">Jednadžba nema niti jedno rješenje</string>
+    <string name="show_x_and_y">Rješenje sustava je točka (%.2f, %.2f)</string>
+    <string name="infinity_solutions_points">Rješenje je svaka točka (x, y) za koju je: %s</string>
+    <string name="no_solutions_points">Nema rješenja, zadani pravci su paralelni</string>
+    <string name="calculate_not_clicked">Prvo morate izračunati svoj sustav jednadžbi!</string>
     <string name="positive_numbers_graph_title">y = %.2fx + %.2f</string>
     <string name="negative_numbers_graph_title">y = %.2fx %.2f</string>
     <string name="first_equation_x">A<sub><small>1</small></sub></string>
@@ -14,18 +14,21 @@
     <string name="second_equation_x">A<sub><small>2</small></sub></string>
     <string name="second_equation_y">B<sub><small>2</small></sub></string>
     <string name="second_equation_z">C<sub><small>2</small></sub></string>
-    <string name="calculate_button">Izracunaj</string>
-    <string name="show_graph_button">Prikazi graf</string>
+    <string name="calculate_button">Izračunaj</string>
+    <string name="show_graph_button">Prikaži graf</string>
     <string name="number_x">x +</string>
     <string name="number_y">y +</string>
     <string name="equation_zero">= 0</string>
-    <string name="toolbar_title">Rjesavanje sustava jednadzbi</string>
+    <string name="toolbar_title">Rješavanje sustava jednadžbi</string>
     <string name="empty_field_error">Neispunjeno polje</string>
-    <string name="about_text">Upute korisniku:\nOva aplikacija izradena je u svrhu pomoci ucenicima
-        prilikom savladavanja gradiva "Rjesavanje sustava linearnih jednadzbi". Aplikacija funkcionira
-        tako da korisnik prvo mora unijeti znamenke uz X, Y i slobodan član (A<sub><small>1</small></sub>, B<sub><small>1</small></sub> itd)
-        , a nakon toga pritisnuti gumb "Izracunaj". Svih 6 brojeva mora biti uneseno. Nakon toga  se prikaze trazena
-        tocka. Pritisak na gumb "Prikazi graf" moguc je tek nakon sto korisnik pritisne gumb "Izracunaj".
-        Pritiskom na taj gumb mogu se vidjeti oba pravca, kao i njihova pripadajuca jednadzba pravca.
-        Takoder se moze vidjeti i tocka, ako postoji, na kojoj se sijeku oba pravca.</string>
+    <string name="about_text">Upute korisniku:\nOva aplikacija izradđna je u svrhu pomoći učenicima
+        prilikom savladavanja gradiva "Rješavanje sustava linearnih jednadžbi". Aplikacija funkcionira
+        tako da korisnik prvo mora unijeti znamenke uz x, y i slobodan član (A<sub><small>1</small></sub>, B<sub><small>1</small></sub> itd)
+        , a nakon toga pritisnuti gumb "Izračunaj". Svih 6 brojeva mora biti unešeno. Nakon toga  se prikaže tražena
+        točka. Pritisak na gumb "Prikaži graf" moguć je tek nakon što korisnik pritisne gumb "Izračunaj".
+        Pritiskom na taj gumb mogu se vidjeti oba pravca, kao i njihova pripadajuća jednadžba pravca.
+        Također se može vidjeti i točka, ako postoji, na kojoj se sijeku oba pravca.</string>
+    <string name="all_zeros_toast">Ne možete unijeti sve nule!</string>
+    <string name="reset_button">Reset</string>
+    <string name="x_and_y_zeros_toast">X i Y ne smiju biti 0</string>
 </resources>

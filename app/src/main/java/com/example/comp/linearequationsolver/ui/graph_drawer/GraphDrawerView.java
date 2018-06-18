@@ -16,6 +16,7 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.PointsGraphSeries;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,10 +33,11 @@ public class GraphDrawerView extends BaseFragment implements GraphDrawerInterfac
 
     LineGraphSeries<DataPoint> firstFunctionGraph = new LineGraphSeries<DataPoint>();
     LineGraphSeries<DataPoint> secondFunctionGraph = new LineGraphSeries<DataPoint>();
+    PointsGraphSeries<DataPoint> pointGraph;
 
     GraphDrawerInterface.Presenter presenter = new GraphDrawerPresenter();
 
-    public static GraphDrawerView newInstance(double x1, double x2, double y1, double y2, double z1, double z2) {
+    public static GraphDrawerView newInstance(double x1, double x2, double y1, double y2, double z1, double z2, boolean isOnlyOnePointSelected) {
         Bundle args = new Bundle();
 
         args.putDouble("x1", x1);
@@ -44,6 +46,7 @@ public class GraphDrawerView extends BaseFragment implements GraphDrawerInterfac
         args.putDouble("y2", y2);
         args.putDouble("z1", z1);
         args.putDouble("z2", z2);
+        args.putBoolean("IS_ONLY_ONE_POINT_SELECTED", isOnlyOnePointSelected);
 
         GraphDrawerView fragment = new GraphDrawerView();
         fragment.setArguments(args);
@@ -74,7 +77,7 @@ public class GraphDrawerView extends BaseFragment implements GraphDrawerInterfac
     private void getExtras() {
         presenter.onExtrasReceived(getArguments().getDouble("x1"), getArguments().getDouble("x2")
                 , getArguments().getDouble("y1"), getArguments().getDouble("y2")
-                , getArguments().getDouble("z1"), getArguments().getDouble("z2"));
+                , getArguments().getDouble("z1"), getArguments().getDouble("z2"), getArguments().getBoolean("IS_ONLY_ONE_POINT_SELECTED"));
     }
 
     @OnClick(R.id.btn_back)
@@ -89,6 +92,12 @@ public class GraphDrawerView extends BaseFragment implements GraphDrawerInterfac
         } else {
             replaceFragment(R.id.fr_layout, EquationSolverView.newInstance(), false);
         }
+    }
+
+    @Override
+    public void showPoint(double pointX, double pointY) {
+        pointGraph = new PointsGraphSeries<> (new DataPoint[] {new DataPoint(pointX, pointY)});
+        graph.addSeries(pointGraph);
     }
 
     @Override
@@ -125,27 +134,6 @@ public class GraphDrawerView extends BaseFragment implements GraphDrawerInterfac
     @Override
     public void setSecondEquationData(int i, double secondEquationY) {
         secondFunctionGraph.appendData(new DataPoint(i, secondEquationY), true, 200);
-    }
-
-    @Override
-    public void setFirstPositiveEquationTitle(double firstEquationX, double firstEquationZ) {
-        firstFunctionGraph.setTitle(String.format((getString(R.string.positive_numbers_graph_title)), firstEquationX, firstEquationZ));
-    }
-
-    @Override
-    public void setSecondPositiveEquationTitle(double secondEquationX, double secondEquationZ) {
-        secondFunctionGraph.setTitle(String.format((getString(R.string.positive_numbers_graph_title)), secondEquationX, secondEquationZ));
-    }
-
-    @Override
-    public void setFirstNegativeEquationTitle(double firstEquationX, double firstEquationZ) {
-        firstFunctionGraph.setTitle(String.format((getString(R.string.negative_numbers_graph_title)), firstEquationX, firstEquationZ));
-    }
-
-    @Override
-    public void setSecondNegativeEquationTitle(double secondEquationX, double secondEquationZ) {
-        secondFunctionGraph.setTitle(String.format((getString(R.string.negative_numbers_graph_title)), secondEquationX, secondEquationZ));
-
     }
 
     @Override

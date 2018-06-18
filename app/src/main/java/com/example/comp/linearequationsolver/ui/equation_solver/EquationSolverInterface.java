@@ -8,7 +8,7 @@ public interface EquationSolverInterface {
 
     interface View {
 
-        void navigateToShowGraph(double x1, double x2, double y1, double y2, double z1, double z2);
+        void navigateToShowGraph(double x1, double x2, double y1, double y2, double z1, double z2, boolean isOnlyOnePointSelected);
 
         void showX1Error();
 
@@ -42,10 +42,21 @@ public interface EquationSolverInterface {
 
         void showErrorCalculateColor();
 
-        void showXandYTextView();
+        void showXAndYTextView();
+
+        void showAllZerosToast();
+
+        void showResetButton();
+
+        void deleteNumbers();
+
+        void showDeclinedShowGraphColor();
+
+        void showXAndYAreZerosToast();
     }
 
     interface Presenter {
+
         void setView(View view);
 
         void onShowGraphClicked();
@@ -53,5 +64,7 @@ public interface EquationSolverInterface {
         void onCalculateClicked(String x1, String x2, String y1, String y2, String z1, String z2);
 
         void onTextChanged(String x1, String x2, String y1, String y2, String z1, String z2);
+
+        void onResetClicked();
     }
 }
