@@ -36,14 +36,15 @@ public class MainActivityView extends BaseActivity implements MainActivityInterf
         addFragment(R.id.fr_layout, EquationSolverView.newInstance());
     }
 
-    @Override
-    public void onBackPressed() {
-        presenter.onBackPressed();
-    }
 
     @OnClick(R.id.iv_about)
     public void onAboutPressed() {
         presenter.onAboutIconPressed();
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onBackPressed() {
+        presenter.onBackPressed();
     }
 
     @Override

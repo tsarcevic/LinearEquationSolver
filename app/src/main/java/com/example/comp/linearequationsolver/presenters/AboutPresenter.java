@@ -8,7 +8,7 @@ import com.example.comp.linearequationsolver.ui.about.AboutInterface;
 
 public class AboutPresenter implements AboutInterface.Presenter {
 
-    AboutInterface.View view;
+    private AboutInterface.View view;
 
     @Override
     public void setView(AboutInterface.View view) {

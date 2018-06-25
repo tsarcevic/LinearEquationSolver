@@ -24,8 +24,6 @@ public interface GraphDrawerInterface {
 
         void showGraphLegend();
 
-        void navigateBack();
-
         void setFirstEquationTitle(String equation);
 
         void setSecondEquationTitle(String equation);
@@ -37,7 +35,5 @@ public interface GraphDrawerInterface {
         void setView(View view);
 
         void onExtrasReceived(double x1, double x2, double y1, double y2, double z1, double z2, boolean isOnlyOnePointSelected);
-
-        void onBackPressed();
     }
 }

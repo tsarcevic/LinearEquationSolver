@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import com.example.comp.linearequationsolver.R;
 import com.example.comp.linearequationsolver.base.BaseFragment;
 import com.example.comp.linearequationsolver.presenters.GraphDrawerPresenter;
-import com.example.comp.linearequationsolver.ui.equation_solver.EquationSolverView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.series.DataPoint;
@@ -20,7 +19,6 @@ import com.jjoe64.graphview.series.PointsGraphSeries;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by COMP on 22.5.2018..
@@ -78,20 +76,6 @@ public class GraphDrawerView extends BaseFragment implements GraphDrawerInterfac
         presenter.onExtrasReceived(getArguments().getDouble("x1"), getArguments().getDouble("x2")
                 , getArguments().getDouble("y1"), getArguments().getDouble("y2")
                 , getArguments().getDouble("z1"), getArguments().getDouble("z2"), getArguments().getBoolean("IS_ONLY_ONE_POINT_SELECTED"));
-    }
-
-    @OnClick(R.id.btn_back)
-    public void onBackPressed() {
-        presenter.onBackPressed();
-    }
-
-    @Override
-    public void navigateBack() {
-        if (getFragmentManager().getBackStackEntryCount() > 0) {
-            getFragmentManager().popBackStack();
-        } else {
-            replaceFragment(R.id.fr_layout, EquationSolverView.newInstance(), false);
-        }
     }
 
     @Override

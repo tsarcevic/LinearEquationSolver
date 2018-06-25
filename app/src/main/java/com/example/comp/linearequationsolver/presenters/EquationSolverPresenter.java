@@ -9,7 +9,7 @@ import com.example.comp.linearequationsolver.utils.MathUtils;
 
 public class EquationSolverPresenter implements EquationSolverInterface.Presenter {
 
-    EquationSolverInterface.View view;
+    private EquationSolverInterface.View view;
 
     private double x1;
     private double x2;

@@ -29,6 +29,16 @@
             android:padding="@dimen/padding_small"
             android:src="@drawable/ic_about" />
 
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/padding_small"
+            android:src="@drawable/ic_back_button" />
+
     </FrameLayout>
 
     <FrameLayout

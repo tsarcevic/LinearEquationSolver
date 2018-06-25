@@ -9,23 +9,14 @@ import com.example.comp.linearequationsolver.utils.MathUtils;
 
 public class GraphDrawerPresenter implements GraphDrawerInterface.Presenter {
 
-    GraphDrawerInterface.View view;
+    private GraphDrawerInterface.View view;
 
-    private double firstEquationParameterX;
-    private double firstEquationParameterZ;
-    private double secondEquationParameterX;
-    private double secondEquationParameterZ;
     private double firstEquationY;
     private double secondEquationY;
 
     @Override
     public void setView(GraphDrawerInterface.View view) {
         this.view = view;
-    }
-
-    @Override
-    public void onBackPressed() {
-        view.navigateBack();
     }
 
     @Override
@@ -44,11 +35,6 @@ public class GraphDrawerPresenter implements GraphDrawerInterface.Presenter {
     }
 
     private void calculateEquations(double x1, double x2, double y1, double y2, double z1, double z2) {
-        firstEquationParameterX = -(x1 / y1);
-        firstEquationParameterZ = -(z1 / y1);
-
-        secondEquationParameterX = -(x2 / y2);
-        secondEquationParameterZ = -(z2 / y2);
 
         view.setFirstEquationTitle(MathUtils.calculateEquationWithY(x1, y1, z1));
         view.setSecondEquationTitle(MathUtils.calculateEquationWithY(x1, y2, z2));
