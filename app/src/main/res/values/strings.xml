@@ -2,6 +2,7 @@
     <string name="app_name">Rješavanje sustava jednadžbi</string>
     <string name="infinity_solutions_toast">Jednadžba ima beskonačno rješenja</string>
     <string name="no_solutions_toast">Jednadžba nema niti jedno rješenje</string>
+    <string name="show_point_title">P (%.2f, %.2f)</string>
     <string name="show_x_and_y">Rješenje sustava je točka (%.2f, %.2f)</string>
     <string name="infinity_solutions_points">Rješenje je svaka točka (x, y) za koju je: %s</string>
     <string name="no_solutions_points">Nema rješenja, zadani pravci su paralelni</string>

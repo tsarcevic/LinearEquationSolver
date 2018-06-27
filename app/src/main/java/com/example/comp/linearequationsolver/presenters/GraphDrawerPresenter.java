@@ -31,6 +31,7 @@ public class GraphDrawerPresenter implements GraphDrawerInterface.Presenter {
             double pointY = MathUtils.calculateDeterminantY(x1, x2, z1, z2) / MathUtils.calculateDeterminant(x1, x2, y1, y2);
 
             view.showPoint(pointX, pointY);
+            view.setCalculatedPointTitle(pointX, pointY);
         }
     }
 

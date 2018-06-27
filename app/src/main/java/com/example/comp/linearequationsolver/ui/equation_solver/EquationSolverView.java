@@ -256,8 +256,18 @@ public class EquationSolverView extends BaseFragment implements EquationSolverIn
     }
 
     @Override
+    public void hideXAndYTextView() {
+        tvShowXAndY.setVisibility(View.GONE);
+    }
+
+    @Override
     public void showResetButton() {
         resetNumbers.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideResetButton() {
+        resetNumbers.setVisibility(View.GONE);
     }
 
     @Override

@@ -44,6 +44,8 @@ public class EquationSolverPresenter implements EquationSolverInterface.Presente
 
         view.deleteNumbers();
         view.showDeclinedShowGraphColor();
+        view.hideXAndYTextView();
+        view.hideResetButton();
     }
 
     @Override

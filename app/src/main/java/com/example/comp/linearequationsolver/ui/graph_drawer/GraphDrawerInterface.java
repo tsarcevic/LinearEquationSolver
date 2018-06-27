@@ -29,6 +29,8 @@ public interface GraphDrawerInterface {
         void setSecondEquationTitle(String equation);
 
         void showPoint(double pointX, double pointY);
+
+        void setCalculatedPointTitle(double pointX, double pointY);
     }
 
     interface Presenter {

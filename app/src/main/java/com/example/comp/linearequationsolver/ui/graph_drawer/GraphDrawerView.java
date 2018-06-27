@@ -17,6 +17,8 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.PointsGraphSeries;
 
+import java.util.Locale;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -128,6 +130,11 @@ public class GraphDrawerView extends BaseFragment implements GraphDrawerInterfac
     @Override
     public void setSecondEquationTitle(String equation) {
         secondFunctionGraph.setTitle(equation);
+    }
+
+    @Override
+    public void setCalculatedPointTitle(double pointX, double pointY) {
+        pointGraph.setTitle(String.format(Locale.US, getString(R.string.show_point_title), pointX, pointY));
     }
 
     @Override

@@ -53,6 +53,10 @@ public interface EquationSolverInterface {
         void showDeclinedShowGraphColor();
 
         void showXAndYAreZerosToast();
+
+        void hideXAndYTextView();
+
+        void hideResetButton();
     }
 
     interface Presenter {
